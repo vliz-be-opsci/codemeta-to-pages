@@ -1,0 +1,6 @@
+2024-11-20 16:08:23 @clitools.py              [DEBUG ] sema-subyt parsed args ns=Namespace(logconf=None, name='metadata.ttl', set=[['codemeta_array', '../src/data/codemeta_array.json']], var=[['base_uri', 'base_uri']], templates='./templates/', input=None, output='outputs/metadata.ttl', force=False, mode=None, allow_repeated_sink_paths=False, conditional=False)
+2024-11-20 16:08:23 @sources.py               [DEBUG ] mapping ext 'json' to mime 'None'
+2024-11-20 16:08:23 @subyt.py                 [DEBUG ] Subyt initialized with {'template_name': 'metadata.ttl', '_inputs': {'codemeta_array': JsonFileSource('C:\Users\cedricd\Documents\GitHub\codemeta-to-pages\src\data\codemeta_array.json')}, '_conditional': False, '_variables': {'base_uri': 'base_uri'}, '_generator_settings': GeneratorSettings('ignorecase,flatten,iteration'), '_sink': SingleFileSink('C:\Users\cedricd\Documents\GitHub\codemeta-to-pages\subyt\outputs\metadata.ttl', False)}
+2024-11-20 16:08:23 @api.py                   [DEBUG ] processing item _ = None
+2024-11-20 16:08:23 @sinks.py                 [INFO  ] Creating outputs/metadata.ttl
+2024-11-20 16:08:23 @__main__.py              [DEBUG ] processing done

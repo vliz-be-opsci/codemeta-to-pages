@@ -1,0 +1,29 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix da: <https://open-vocabularies.vliz.be/dmbonassistant#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix schema: <http://schema.org/> .
+
+
+
+
+<{{base_uri}}> rdf:type dcat:Catalog ;
+    dc:title "catalog of vliz code projects" ;
+    foaf:name "catalog of vliz code projects" ;
+    dc:description "a catalog collection of vliz code projects" ;
+    schema:mainEntityOfPage <{{base_uri}}> ;
+    foaf:homepage <{{base_uri}}> ;
+    dcat:dataset 
+    {% for codemeta_project in sets['codemeta_array'] -%}
+    <{{codemeta_project.codeRepository}}>{% if not codemeta_project == sets['codemeta_array']|list|last %},{% endif %}
+    {% endfor %} 
+    .
+
+{% for codemeta_project in sets['codemeta_array'] -%}
+<{{codemeta_project.codeRepository}}> rdf:type dcat:Dataset;
+    dc:title "{{codemeta_project.name}}" ;
+    dc:description "{{codemeta_project.description}}" ;
+    .
+{% endfor %}

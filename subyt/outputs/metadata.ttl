@@ -1,0 +1,26 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix da: <https://open-vocabularies.vliz.be/dmbonassistant#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix schema: <http://schema.org/> .
+
+
+
+
+<base_uri> rdf:type dcat:Catalog ;
+    dc:title "catalog of vliz code projects" ;
+    foaf:name "catalog of vliz code projects" ;
+    dc:description "a catalog collection of vliz code projects" ;
+    schema:mainEntityOfPage <base_uri> ;
+    foaf:homepage <base_uri> ;
+    dcat:dataset 
+    <https://github.com/lifewatch/eva>
+     
+    .
+
+<https://github.com/lifewatch/eva> rdf:type dcat:Dataset;
+    dc:title "eva" ;
+    dc:description "Code used to generate ecological value assessments (EVA) based on species occurences clustered in ecological components (e.g. birds, fish, plankton, benthos, cetaceans); created in the Marbefes project" ;
+    .
