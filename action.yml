@@ -1,0 +1,20 @@
+name: "codemeta-to-pages"
+description: "This action takes some config files and makes a github pages site from them"
+branding:
+  icon: "upload-cloud"
+  color: "red"
+inputs:
+  repo_path:
+    description: "Path to the repo to be published"
+    required: false
+    default: "."
+  base_uri:
+    description: "Base URI for the site to be published. eg: https://myorg.github.io/myrepo"
+    required: false
+    default: "https://${{ github.repository_owner }}.github.io/${{ github.repository }}"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.repo_path }}
+    - ${{ inputs.base_uri }}
